@@ -1,17 +1,33 @@
 [project]
-name = "blurdetection"
+name = "imgqi"
 version = "0.1.0"
-description = "Add your description here"
+description = "Image Quality Inspector: Regional Blur Detection and Explainable Image Quality Assessment"
 readme = "README.md"
 authors = [
     { name = "Pranav Krishna", email = "pranavkrishnap856@gmail.com" }
 ]
 requires-python = ">=3.11"
-dependencies = []
+dependencies = [
+    "opencv-python>=4.8.0",
+    "numpy>=1.26.0",
+    "matplotlib>=3.8.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0.0",
+    "pytest-cov>=5.0.0",
+]
 
 [project.scripts]
-blurdetection = "blurdetection:main"
+imgqi = "imgqi.cli:main"
 
 [build-system]
 requires = ["uv_build>=0.12.19,<0.13.0"]
 build-backend = "uv_build"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
