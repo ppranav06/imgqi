@@ -212,10 +212,10 @@ class AnalysisResult:
         print(f"  Global sharpness (Laplacian var)  : {self.global_sharpness:>10.2f}")
         print(f"    Threshold                         : {self.sharpness_threshold:>10.2f}")
         print(f"  Contrast (intensity std dev)       : {self.contrast_std:>10.2f}")
-        print(f"  Contrast (P5–P95 range)            : {self.contrast_p90_range:>10.2f}")
-        print(f"  Exposure – dark pixels (<{self.exposure.get('dark_pixel_percent', 0):.0f} thr) : "
+        print(f"  Contrast (P5-P95 range)            : {self.contrast_p90_range:>10.2f}")
+        print(f"  Exposure - dark pixels (<{self.exposure.get('dark_pixel_percent', 0):.0f} thr) : "
               f"{self.exposure.get('dark_pixel_percent', 0):>8.2f} %")
-        print(f"  Exposure – bright pixels           : "
+        print(f"  Exposure - bright pixels           : "
               f"{self.exposure.get('bright_pixel_percent', 0):>8.2f} %")
         print(f"  Mean intensity                     : "
               f"{self.exposure.get('mean_intensity', 0):>10.2f}")

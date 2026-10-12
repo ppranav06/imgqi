@@ -14,7 +14,7 @@ Regional blur detection and explainable image quality assessment using classical
 | Gradient-energy gate | Sobel MSG distinguishes blank walls from blurry tiles |
 | Sharpness heatmap | Absolute-threshold colourmap, reproducible across images |
 | Tile-state overlay | Coloured rectangles per tile (green=sharp, red=blurry, grey=inconclusive) |
-| Contrast analysis | Intensity std dev + P5–P95 percentile range |
+| Contrast analysis | Intensity std dev + P5-P95 percentile range |
 | Exposure analysis | Near-black and near-white pixel fractions |
 | Noise proxy | Gaussian residual standard deviation |
 | Quality report | Human-readable warnings with per-metric explanations |

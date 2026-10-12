@@ -47,7 +47,7 @@ def contrast_percentile_range(gray: np.ndarray, low: float = 5.0, high: float = 
     gray:
         Single-channel uint8 grayscale array.
     low, high:
-        Percentile bounds (0–100).
+        Percentile bounds (0-100).
     """
     lo, hi = np.percentile(gray, [low, high])
     return float(hi - lo)
@@ -76,7 +76,7 @@ def exposure_metrics(
     dict with keys:
         ``dark_pixel_percent``  — fraction below *dark_threshold* × 100
         ``bright_pixel_percent`` — fraction above *bright_threshold* × 100
-        ``mean_intensity``      — average pixel value (0–255)
+        ``mean_intensity``      — average pixel value (0-255)
     """
     n = gray.size
     dark_ratio = float(np.count_nonzero(gray < dark_threshold) / n * 100)
