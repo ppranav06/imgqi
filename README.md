@@ -23,12 +23,23 @@ Regional blur detection and explainable image quality assessment using classical
 
 ---
 
+## Todo
+- [ ] Separate images of lower quality into a separate folder
+- [ ] Classify different blur types (focus blur, bokeh, motion blur)
+- [ ] Callibrate the thresholds properly 
+<!-- - [ ] 
+- [ ] 
+- [ ] 
+- [ ]  -->
+
+---
+
 ## Installation
 
 ```bash
 # Clone and enter the project
 git clone <repo-url>
-cd ImageProcessing-BlurDetection
+cd imgqi
 
 # Install with uv (recommended)
 uv sync --extra dev
@@ -144,7 +155,7 @@ tests/
 
 ### Global sharpness
 
-$$S_{\text{global}} = \operatorname{Var}(\nabla^2 I)$$
+$$S_{\text{global}} = \text{Var}(\nabla^2 I)$$
 
 Higher variance → more high-frequency detail. A low score may indicate blur but also occurs with legitimately smooth content.
 
@@ -152,7 +163,7 @@ Higher variance → more high-frequency detail. A low score may indicate blur bu
 
 The Laplacian is computed **once** over the full image and then sliced into tiles. This avoids artificial boundary artefacts from filtering each tile independently.
 
-$$S_{i,j} = \operatorname{Var}(\nabla^2 I[y_i : y_i+T,\; x_j : x_j+T])$$
+$$S_{i,j} = \text{Var}(\nabla^2 I[y_i : y_i+T,\; x_j : x_j+T])$$
 
 ### Three-state tile classification
 
